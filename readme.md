@@ -39,9 +39,11 @@ PDItarea1/
 
 │ │ ├── abrirvideo.py # Lógica para cargar y leer el video
 
-│ │ └── contornos.py # Detección de bordes, umbrales, centroides, etc.
+│ │ └── contornos.py # Detección de bordes, umbrales, centroides, etc. y genera el csv con las trazas
 
 │ ├── procesamiento/ # Módulo para cálculos físicos y visualizaciones
+
+│ │ └── regresion.py # hace la regresion
 
 │ └── user_files/
 
@@ -86,6 +88,19 @@ Calcula y guarda los datos del análisis (posición, velocidad, aceleración)
 
 Superpone los resultados y genera gráficas
 
+plt.figure(figsize=(10, 6))  # crea una nueva figura de 10x6 pulgadas
+plt.scatter(x, y, label='Trayectoria real', color='blue')  # dibuja puntos (trayectoria real)
+plt.plot(x, y_ajustada, label='Regresión parabólica', color='red')  # dibuja línea de la regresión
+plt.gca().invert_yaxis()  # invierte eje Y (0 arriba como en imágenes)
+plt.title("Regresión Parabólica del Movimiento del Balón")  # título de la gráfica
+plt.xlabel("X (pixeles)")  # etiqueta del eje X
+plt.ylabel("Y (pixeles)")  # etiqueta del eje Y
+plt.legend()  # muestra la leyenda (colores y etiquetas)
+plt.grid(True)  # activa cuadrícula de fondo
+plt.tight_layout()  # ajusta diseño para que nada se corte
+plt.savefig("user_files/regresion_parabolica.png")  # guarda la imagen en esa ruta
+plt.show()  # muestra la gráfica en una ventana emergente
+
 📊 Resultados Esperados
 
 Video con anotaciones que muestren la trayectoria, velocidad y aceleración.
@@ -93,6 +108,9 @@ Video con anotaciones que muestren la trayectoria, velocidad y aceleración.
 Gráficas comparativas entre los valores experimentales y los teóricos.
 
 Informe técnico con el análisis de los resultados (formato IEEE).
+
+
+
 
 🧪 Estado Actual
 Carga y lectura del video
