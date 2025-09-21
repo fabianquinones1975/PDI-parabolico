@@ -26,15 +26,25 @@ Este proyecto tiene como objetivo capturar y analizar el movimiento de un objeto
 
 PDItarea1/
 │
+
 ├── app.py # Script principal del proyecto
+
 ├── app/
+
 │ ├── app.py # Punto de entrada o controlador de la app
+
 │ ├── frontend/ # Archivos relacionados con la visualización (si aplica)
+
 │ ├── preprocesamiento/
+
 │ │ ├── abrirvideo.py # Lógica para cargar y leer el video
+
 │ │ └── contornos.py # Detección de bordes, umbrales, centroides, etc.
+
 │ ├── procesamiento/ # Módulo para cálculos físicos y visualizaciones
+
 │ └── user_files/
+
 │ └── tiro.mp4 # Video original del tiro parabólico
 
 ---
